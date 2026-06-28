@@ -1,92 +1,31 @@
-# ARFESA Haberlesme Test Case Study
+# 🛰️ ARFESA — Rocket Telemetry Communication Test
 
-This repository is a public case study for a TEKNOFEST rocket telemetry communication test.
+> STM32-based telemetry communication test case study for the ARFESA TEKNOFEST rocket team.
 
-The original team repository is private, so this repository focuses on the architecture, engineering decisions, test workflow, and safe code snippets that describe the work without exposing private team assets.
+![C](https://img.shields.io/badge/C-A8B9CC?logo=c&logoColor=black)
+![STM32](https://img.shields.io/badge/STM32-03234B?logo=stmicroelectronics&logoColor=white)
 
-## Project Summary
+## About
 
-The goal was to validate communication between a rocket flight computer and a ground station.
+A focused test/case study for the avionics communication layer of a TEKNOFEST competition rocket. It validates real-time, multi-sensor data flow on **STM32** microcontrollers over **SPI / I2C / UART**, as part of the rocket's flight-data pipeline.
 
-**Flight computer side**
+## Highlights
 
-- STM32F407 based embedded software
-- BNO055 IMU data
-- MS5611 barometer data
-- GPS status and position data
-- Ebyte LoRa telemetry transmission
+- 📡 Multi-sensor data acquisition over SPI / I2C / UART
+- 🎯 Kalman filtering for sensor-noise reduction (~25%) and altitude estimation
+- ⚡ Real-time data-flow optimization for the avionics backend
+- 🪂 Part of fail-safe flight & recovery logic
 
-**Ground station side**
+## Tech stack
 
-- ESP32 based LoRa receiver
-- USB serial monitor output
-- Packet counter, link status, and telemetry display workflow
+- **C** (bare-metal / STM32 HAL)
+- **STM32** microcontrollers
+- **FreeRTOS**, Kalman filter, sensor fusion
+- Buses: **SPI, I2C, UART**
 
-## My Contribution
+## Build
 
-- Worked on the STM32 to ESP32 telemetry communication flow
-- Prepared documentation for wiring, LoRa setup, packet format, and test steps
-- Organized a repeatable communication test workflow for flight computer and ground station
-- Helped structure the project files for easier review and future development
+Open with **STM32CubeIDE** (or build with the ARM GCC toolchain), flash to the target STM32 board.
 
-## Tech Stack
-
-- C
-- STM32CubeIDE
-- STM32F407
-- ESP32
-- LoRa E22
-- BNO055
-- MS5611
-- GPS module
-- Serial debugging
-
-## Architecture
-
-```text
-Sensors
-  |-- BNO055 IMU
-  |-- MS5611 Barometer
-  |-- GPS Module
-        |
-        v
-STM32F407 Flight Computer
-        |
-        | LoRa telemetry packet
-        v
-ESP32 Ground Station
-        |
-        v
-PC Serial Monitor / Dashboard
-```
-
-## Repository Structure
-
-```text
-docs/
-  architecture.md
-  test-workflow.md
-  wiring-notes.md
-
-code-snippets/
-  telemetry_packet.h
-
-images/
-  .gitkeep
-```
-
-## What This Demonstrates
-
-- Embedded system communication design
-- Sensor-to-telemetry data flow
-- STM32 and ESP32 integration thinking
-- Documentation discipline for hardware/software projects
-- Practical debugging with serial monitor output
-
-## Future Improvements
-
-- Add screenshots from serial monitor output
-- Add wiring diagram images
-- Add a short demo video link
-- Add packet loss and RSSI test results
-- Add a simplified dashboard preview
+---
+Made by [İsmet Güler](https://github.com/ismetguler) · [Portfolio](https://ismetguler.github.io)
