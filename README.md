@@ -12,7 +12,7 @@ A focused test/case study for the avionics communication layer of a TEKNOFEST co
 ## Highlights
 
 - 📡 Multi-sensor data acquisition over SPI / I2C / UART
-- 🎯 Kalman filtering for sensor-noise reduction (~25%) and altitude estimation
+- 🎯 Experiments with Kalman filtering for altitude estimation
 - ⚡ Real-time data-flow optimization for the avionics backend
 - 🪂 Part of fail-safe flight & recovery logic
 
@@ -20,7 +20,7 @@ A focused test/case study for the avionics communication layer of a TEKNOFEST co
 
 - **C** (bare-metal / STM32 HAL)
 - **STM32** microcontrollers
-- **FreeRTOS**, Kalman filter, sensor fusion
+- **FreeRTOS**
 - Buses: **SPI, I2C, UART**
 
 ## Build
@@ -28,4 +28,4 @@ A focused test/case study for the avionics communication layer of a TEKNOFEST co
 Open with **STM32CubeIDE** (or build with the ARM GCC toolchain), flash to the target STM32 board.
 
 ---
-Made by [İsmet Güler](https://github.com/ismetguler) · [Portfolio](https://ismetguler.github.io)
+Built with AI-assisted development · Made by [İsmet Güler](https://github.com/ismetguler) · [Portfolio](https://ismetguler.github.io)
